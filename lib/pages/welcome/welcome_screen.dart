@@ -3,9 +3,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app_bloc_managment/main.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shop_app_bloc_managment/pages/welcome/bloc/welcome_bloc.dart';
-import '../../MyHomePage.dart';
 import 'bloc/welcome_event.dart';
 import 'bloc/welcome_state.dart';
 
@@ -143,11 +142,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               );
             } else {
               // Handle the last page action
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) => const MyHomePage(),
-                ),
-              );
+              context.go("/Sign_In");
+
+
             }
           },
           child: Container(
